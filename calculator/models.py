@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class inputNumber(models.Model):
+    x = models.TextField(default='')
+    y = models.TextField(default='')

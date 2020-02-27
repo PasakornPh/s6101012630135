@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from calculator import views
+from calculator_get import views as views_get
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home_page, name='home'),
+    path('post/', views.calc_post, name='calc_post'),
+    path('get/', views_get.home_page_get, name='home_get'),
+    path('about/', views.about, name='about'),
 ]

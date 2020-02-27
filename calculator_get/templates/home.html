@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form method="GET">
+        {% csrf_token %}
+        <p>X : <input name="number_x" id="id_x" placeholder="Enter your first number" /></p>
+        <p>Y : <input name="number_y" id="id_y" placeholder="Enter your second number" /></p>
+        <button style="font-size : 20px;height:50px;width:50px" type="submit" name="plus">+</button>
+        <button style="font-size : 20px;height:50px;width:50px" type="submit" name="sub">-</button>
+        <button style="font-size : 20px;height:50px;width:50px" type="submit" name="multi">*</button>
+        <button style="font-size : 20px;height:50px;width:50px" type="submit" name="div">/</button>
+    </form>
+
+    <h2>Result : {{ x }}{{ operation }}{{ y }} {% if x %}={% else %}{%endif%}  {{ result }} </h2>
+
+</body>
+</html>
