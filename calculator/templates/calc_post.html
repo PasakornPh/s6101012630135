@@ -5,7 +5,7 @@
     <title>Calculator</title>
 </head>
 <body>
-    <h1>Calculator</h1>
+    <h1>Calculator POST</h1>
     <form method="POST">
         {% csrf_token %}
         <p>X : <input name="number_x" id="id_x" placeholder="Enter your first number" /></p>
@@ -16,7 +16,6 @@
         <button style="font-size : 20px;height:50px;width:50px" type="submit" name="div">/</button>
     </form>
 
-    <h1>Result : {{ x }} + {{ y }}  = {{ result }}</h1>
-    {{ number }}
+    <h2>Result : {{ x }}{{ operation }}{{ y }} {% if x %}={% else %}{%endif%}  {{ result }} </h2>
 </body>
 </html>
