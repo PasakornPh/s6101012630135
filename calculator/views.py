@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-
+from calculator.models import saveResult
 # Create your views here.
 
 from django.http import HttpResponse
@@ -36,6 +36,9 @@ def calc_post(request):
         else:
             pass
 
+        save_value = saveResult(val_results=result)
+        save_value.save()
+
     elif 'sub' in request.POST:
 
         x = request.POST['number_x']
@@ -55,6 +58,9 @@ def calc_post(request):
         else:
             pass
 
+        save_value = saveResult(val_results=result)
+        save_value.save()
+
     elif 'multi' in request.POST:
 
         x = request.POST['number_x']
@@ -73,6 +79,9 @@ def calc_post(request):
             result = "{:.0f}".format(result)
         else:
             pass
+
+        save_value = saveResult(val_results=result)
+        save_value.save()
 
 
     elif 'div' in request.POST:
@@ -94,4 +103,8 @@ def calc_post(request):
         else:
             pass
 
+        save_value = saveResult(val_results=result)
+        save_value.save()
+
     return render(request, 'calc_post.html', {'x': x, 'y': y, 'result': result,'operation' : operation})
+
