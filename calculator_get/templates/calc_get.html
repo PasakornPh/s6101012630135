@@ -8,7 +8,7 @@
     <h1>Calculator GET</h1>
     <form method="GET">
         {% csrf_token %}
-        <p>X : <input name="number_x" id="id_x" placeholder="Enter your first number" /></p>
+        <p>X : <input name="number_x" id="id_x" placeholder="Enter your first number" value="{{ x_input }}" /></p>
         <p>Y : <input name="number_y" id="id_y" placeholder="Enter your second number" /></p>
         <button style="font-size : 20px;height:50px;width:50px" type="submit" name="plus">+</button>
         <button style="font-size : 20px;height:50px;width:50px" type="submit" name="sub">-</button>
@@ -18,7 +18,7 @@
 
     <h2>Result : {{ x }}{{ operation }}{{ y }} {% if x %}={% else %}{%endif%}  {{ result }} </h2>
 
-    <form method="POST">
+    <form method="GET">
         {% csrf_token %}
         <button style="font-size : 20px;height:50px;width:200px" type="submit" name="continue">Continue</button>
     </form>
